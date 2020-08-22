@@ -47,22 +47,21 @@ const TextArea = styled.textarea`
   }
 `;
 
-class Write extends React.Component {
+class Detail extends React.Component {
   render() {
     return (
       <Wrapper>
-        <Title>게시글 작성 ({this.props.match.params.boardType})</Title>
+        <Title>게시글 상세보기</Title>
 
-        <TextInput type="text" placeholder="Title..." />
-        <TextInput type="text" placeholder="Author..." />
-        <TextArea placeholder="Description..." />
+        <TextInput type="text" readOnly={true} />
+        <TextInput type="text" readOnly={true} />
+        <TextArea readOnly={true} />
         <Wrapper direction={`row`}>
-          <C_Btn>작성하기</C_Btn>
-          <D_Btn onClick={() => this.props.history.goBack()}>작성취소</D_Btn>
+          <D_Btn onClick={() => this.props.history.goBack()}>목록으로</D_Btn>
         </Wrapper>
       </Wrapper>
     );
   }
 }
 
-export default Write;
+export default Detail;
